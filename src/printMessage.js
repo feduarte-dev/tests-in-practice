@@ -4,13 +4,24 @@ let info = {
   nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
 };
 
-const printMessage = (characterInfo) => {
-  // Implemente seu código aqui
-  let result = `Boas vindas, ${characterInfo.personagem}`;
+let teste = {};
 
-  return result;
+const validaObj = (characterInfo) => {
+  if (!characterInfo.personagem) {
+    throw new Error('objeto inválido');
+  }
 };
 
-console.log(printMessage(info));
+const printMessage = (characterInfo) => {
+  try {
+    validaObj(characterInfo);
+    let result = `Boas vindas, ${characterInfo.personagem}`;
+    return result;
+  } catch (error) {
+    return error.message;
+  }
+};
 
-module.exports = { info, printMessage };
+console.log(printMessage(teste));
+
+module.exports = { info, teste, validaObj, printMessage };
