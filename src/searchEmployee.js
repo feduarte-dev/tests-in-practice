@@ -36,10 +36,39 @@ const professionalBoard = [
     specialities: ['Backend'],
   },
 ];
-
-const searchEmployee = (id, employeeInfo) => {
-  // Implemente seu código aqui
-  console.log(professionalBoard, id, employeeInfo);
+// Parece que eu tive que ir muito longe para chegar na lógica dessa função
+const validaId = (id) => {
+  let count = 0;
+  for (let index = 0; index < professionalBoard.length; index += 1) {
+    if (professionalBoard[index].id === id) {
+      count += 1;
+    }
+  }
+  if (count === 0) {
+    throw new Error('ID não identificado');
+  }
 };
 
-module.exports = searchEmployee;
+const validaInfo = (employeeInfo) => {
+  for (let index = 0; index < professionalBoard.length; index += 1) {
+    if (!professionalBoard[index][employeeInfo]) {
+      throw new Error('Informação indisponível');
+    }
+  }
+};
+
+const searchEmployee = (id, employeeInfo) => {
+  try {
+    validaId(id);
+    validaInfo(employeeInfo);
+    for (let index = 0; index < professionalBoard.length; index += 1) {
+      if (professionalBoard[index].id === id) {
+        return professionalBoard[index][employeeInfo];
+      }
+    }
+  } catch (error) {
+    return error.message;
+  }
+};
+console.log(searchEmployee());
+module.exports = { searchEmployee, validaId, validaInfo };
