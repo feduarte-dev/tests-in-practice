@@ -23,7 +23,7 @@ The purpose of this project is to test all functions in the 'src' folder. This i
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/feduarte-dev/tests-practice
+   git clone https://github.com/feduarte-dev/tests-in-practice
    ```
 
 2. Navigate to the project directory:
