@@ -1,5 +1,3 @@
-// exercise-bonus.test.js
-
 const {
   searchEmployee,
   validaId,
@@ -26,7 +24,7 @@ describe('5 - Neste exercício, você irá praticar o desenvolvimento orientado 
       'Tailwind CSS',
     ]);
   });
-  // Faz sentido eu trabalhar com a função de validação ao invés da principal
+
   it('Testa se um erro com a mensagem "ID não identificada" é retornado quando a ID não existir', () => {
     expect(() => {
       validaId('00');
