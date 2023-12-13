@@ -1,4 +1,4 @@
-# README: Tests in Practice
+# README: Tests in practice
 
 <img src="assets/tests-practice.png" alt="page" title="page" width=100%>
 
